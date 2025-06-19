@@ -39,6 +39,7 @@ export const applyJob = async (req, res) => {
             applicant: userId
         }
         const newApplication = new Application(applicationData);
+        console.log(newApplication)
         await newApplication.save();
         //application saved
         //ab hame job k liye iss user n apply kr diya h vo show krna h aur us application ki id Job m store krni h 

@@ -116,7 +116,7 @@ export const getJobById = async (req, res) => {
     try {
         //Job id url se aaegi by params
         const jobId = req.params.id;
-        const job = await Job.findById(jobId).populate({path : "company"}).sort({createdAt : -1});
+        const job = await Job.findById(jobId).populate({path : "applications"});
         if (!job) {
             return res.status(404).json({
                 message: "Job not found",
