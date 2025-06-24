@@ -39,7 +39,7 @@ const Job = ({job , index}) => {
             <div className="flex items-center gap-2 mt-4 ">
                 <Badge className='text-blue-700 font-bold' variant="ghost">{job?.position}</Badge>
                 <Badge className='text-[#F83002]' variant="ghost">{job?.jobType}</Badge>
-                <Badge className='text-[#7209b7] font-bold' variant="ghost">{job?.salary}</Badge>
+                <Badge className='text-[#7209b7] font-bold' variant="ghost">{job?.salary} LPA</Badge>
             </div>
             <div className="flex items-center gap-4 mt-4">
                 <Button onClick={()=>navigate(`/description/${job?._id}`)} job={job} variant="outline">Details</Button>
