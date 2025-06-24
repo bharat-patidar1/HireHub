@@ -33,7 +33,7 @@ app.use(express.urlencoded({extended:true}))
 app.use(cookieParser())
 
 const corsOption = {
-    origin : "http://localhost:5173",
+    origin : "https://hirehub-09as.onrender.com",
     //it will allow request from only that frontend url
     credentials : true
 }
