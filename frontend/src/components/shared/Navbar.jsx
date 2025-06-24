@@ -1,6 +1,6 @@
 import { LogOut, User2 } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
-import { Avatar, AvatarImage } from "../ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import { Button } from "../ui/button";
 import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
 import { useDispatch, useSelector } from "react-redux";
