@@ -1,5 +1,6 @@
-const { useSelector } = require("react-redux");
-const { useNavigate } = require("react-router-dom");
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+
 
 
 
