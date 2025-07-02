@@ -3,13 +3,12 @@ import { useNavigate } from "react-router-dom";
 
 
 
-
-const CheckAuthentication = (Children)=>{
+export default function CheckAuthentication({children}){
+    const {user} = useSelector(store=>store.auth)
     const navigate = useNavigate();
-    const {user} = useSelector(store=>store.auth);
-   if(user == null){
-    navigate('/login')
-   }
-    return (user == null) ? <Login/> :  Children;
+    if(user == null){
+        return navigate('/login')
+    } else {
+        return children
+    }
 }
-export default CheckAuthentication;
