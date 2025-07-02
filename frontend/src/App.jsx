@@ -1,5 +1,5 @@
 import './App.css'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom'
 import { Login } from './components/auth/Login'
 import { Home } from './components/Home'
 import { Signup } from './components/auth/Signup'
@@ -14,10 +14,12 @@ import AdminJobs from './components/admin/AdminJobs'
 import JobCreate from './components/admin/JobCreate'
 import Applicants from './components/admin/Applicants'
 function App() {
+  const isLoggedIn= JSON.parse(localStorage.getItem("keepLoggedIn"))
+  const navigate = useNavigate();
   return (
     <BrowserRouter>
       <Routes>
-        <Route path={'/'} element={<Home />}></Route>
+        <Route path={'/'} element={isLoggedIn ? navigate('/') : <Home/>}></Route>
         <Route path={'/login'} element={<Login />}></Route>
         <Route path={'/signup'} element={<Signup />}></Route>
         <Route path={'/profile'} element={<Profile />}></Route>

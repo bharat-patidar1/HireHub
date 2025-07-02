@@ -40,6 +40,9 @@ export const Login = () => {
                 withCredentials: true
             })
             if (res.data.success){
+                const token = res.data.token;
+                localStorage.setItem("authToken" , token);
+                localStorage.setItem("keepLoggedIn" , JSON.stringify(true))
                 dispatch(setUser(res.data.user))
                 navigate("/")
                 toast.success(res.data.message)
