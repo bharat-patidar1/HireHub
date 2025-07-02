@@ -14,12 +14,11 @@ import AdminJobs from './components/admin/AdminJobs'
 import JobCreate from './components/admin/JobCreate'
 import Applicants from './components/admin/Applicants'
 function App() {
-  const isLoggedIn= JSON.parse(localStorage.getItem("keepLoggedIn"))
 
   return (
     <BrowserRouter>
       <Routes>
-        <Route path={'/'} element={isLoggedIn && <Home/>}></Route>
+        <Route path={'/'} element={<Home/>}></Route>
         <Route path={'/login'} element={<Login />}></Route>
         <Route path={'/signup'} element={<Signup />}></Route>
         <Route path={'/profile'} element={<Profile />}></Route>
