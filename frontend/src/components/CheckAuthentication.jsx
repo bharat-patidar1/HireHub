@@ -10,8 +10,6 @@ const CheckAuthentication = (Children)=>{
    if(user == null){
     navigate('/login')
    }
-    return(
-        Children
-    );
+    return (user == null) ? <Login/> :  Children;
 }
 export default CheckAuthentication;
