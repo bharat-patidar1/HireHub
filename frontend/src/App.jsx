@@ -13,6 +13,7 @@ import CompanySetup from './components/admin/CompanySetup'
 import AdminJobs from './components/admin/AdminJobs'
 import JobCreate from './components/admin/JobCreate'
 import Applicants from './components/admin/Applicants'
+import CheckAuthentication from './components/CheckAuthentication'
 function App() {
 
   return (
@@ -22,17 +23,17 @@ function App() {
         <Route path={'/login'} element={<Login />}></Route>
         <Route path={'/signup'} element={<Signup />}></Route>
         <Route path={'/profile'} element={<Profile />}></Route>
-        <Route path={'/jobs'} element={<Jobs />}></Route>
-        <Route path={'/browse'} element={<Browse />}></Route>
-        <Route path={'/description/:id'} element={<JobDescription />}></Route>
+        <Route path={'/jobs'} element={<CheckAuthentication><Jobs /></CheckAuthentication>}></Route>
+        <Route path={'/browse'} element={<CheckAuthentication><Browse /></CheckAuthentication>}></Route>
+        <Route path={'/description/:id'} element={<CheckAuthentication><JobDescription /></CheckAuthentication>}></Route>
         {/* for admin */}
-        <Route path={'/admin/companies'} element={<Companies />}></Route>
-        <Route path={'/admin/companies/create'} element={<CompanyCreate />}></Route>
+        <Route path={'/admin/companies'} element={<CheckAuthentication><Companies /></CheckAuthentication>}></Route>
+        <Route path={'/admin/companies/create'} element={<CheckAuthentication><CompanyCreate /></CheckAuthentication>}></Route>
         <Route path={'/admin/companies/:id'} element={<CompanySetup />}></Route>
         {/* for jobs posted by admin */}
-        <Route path='/admin/jobs' element={<AdminJobs/>}></Route>
-        <Route path='/admin/jobs/create' element={<JobCreate/>}></Route>
-        <Route path='/admin/jobs/:id/applicants' element={<Applicants/>}></Route>
+        <Route path='/admin/jobs' element={<CheckAuthentication><AdminJobs/></CheckAuthentication>}></Route>
+        <Route path='/admin/jobs/create' element={<CheckAuthentication><JobCreate/></CheckAuthentication>}></Route>
+        <Route path='/admin/jobs/:id/applicants' element={<CheckAuthentication><Applicants/></CheckAuthentication>}></Route>
 
       </Routes>
     </BrowserRouter>
