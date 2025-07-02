@@ -7,16 +7,9 @@ import { useNavigate } from "react-router-dom";
 const CheckAuthentication = (Children)=>{
 
     const {user} = useSelector(store=>store.auth);
-    const isAuthenticated = false;
-    const navigate = useNavigate();
-    if(user != null){
-        isAuthenticated = true;
-    } else{
-        isAuthenticated = false
-    }
-    if(!isAuthenticated){
-        navigate('/login')
-    }
+   if(user == null){
+    Navigate('/login')
+   }
     return(
         Children
     );
